@@ -1,23 +1,20 @@
 pipeline {
   agent any
   stages {
-    stage('prerequisities') {
+    stage('Speak') {
+      when {
+        expression {
+          params.REQUESTED_ACTION == 'greeting'
+        }
+
+      }
       steps {
-        echo 'La LA'
+        echo 'Hello, bitwiseman!'
       }
     }
 
-    stage('error') {
-      steps {
-        sh 'sshpass -p demo scp /home/jenkins/cp/cp.txt demo@172.31.42.58:/home/demo/'
-      }
-    }
-
-  }
-  environment {
-    first = 'step'
   }
   parameters {
-    choice(choices: ['a', 'b'], description: '', name: 'REQUEST_ACTION')
+    choice(choices: ['greeting' , 'silence'], description: '', name: 'REQUESTED_ACTION')
   }
 }
