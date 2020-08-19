@@ -3,9 +3,7 @@ pipeline {
   stages {
     stage('prerequisities') {
       steps {
-        sh '''mkdir abc
-pwd
-mkdir abc'''
+        sh 'ssh demo@ip-172-31-42-58'
       }
     }
 
