@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('prerequisities') {
       steps {
-        sh 'ssh -t -t -oStrictHostKeyChecking=no demo@ip-172-31-42-58'
+        sh 'pwd'
       }
     }
 
