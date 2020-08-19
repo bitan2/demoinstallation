@@ -6,7 +6,7 @@ pipeline {
         sh ''' 
           sshpass -p demo ssh demo@172.31.42.58 \'
 
-mkdir anni
+mkdir annibitss
 
 
 \' 
