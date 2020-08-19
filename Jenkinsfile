@@ -4,7 +4,8 @@ pipeline {
     stage('prerequisities') {
       steps {
         sh '''mkdir abc
-pwd'''
+pwd
+mkdir abc'''
       }
     }
 
