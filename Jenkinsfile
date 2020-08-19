@@ -9,7 +9,7 @@ pipeline {
 
     stage('error') {
       steps {
-        sh 'scp /home/jenkins/cp.txt demo@172.31.42.58 /manu'
+        sh 'scp /home/jenkins/cp.txt demo@172.31.42.58 /home/demo/manu'
       }
     }
 
