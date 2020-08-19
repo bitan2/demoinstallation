@@ -17,4 +17,7 @@ pipeline {
   environment {
     first = 'step'
   }
+  parameters {
+    choice(choices: ['a', 'b'], description: '', name: 'REQUEST_ACTION')
+  }
 }
