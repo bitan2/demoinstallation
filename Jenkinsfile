@@ -3,10 +3,14 @@ pipeline {
   stages {
     stage('other_installation') {
       steps {
+        sh 'scp /home/jenkins/script/script.sh $hostname:/home/bitan/script'
         sh """ssh -t -t $hostname '
-               mkdir bbai 
-             '
-             """
+        cd script 
+        chmod +x script.sh
+        ./script.sh
+                       
+                     '
+                     """
       }
     }
 
