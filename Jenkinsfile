@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('other_installation') {
       steps {
-        sh ' echo "{env.user}"'
+        sh ' echo "${env.user}"'
       }
     }
 
