@@ -3,14 +3,7 @@ pipeline {
   stages {
     stage('other_installation') {
       steps {
-        sh ''' echo "{env.user}"  \'
-mkdir download
-
-cd download
-mkdir anni
-sudo apt install openjdk-11-jre-headless -y
- \'
-        '''
+        sh ' echo "{env.user}"'
       }
     }
 
