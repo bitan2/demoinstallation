@@ -9,7 +9,8 @@ pipeline {
 
       }
       steps {
-        sh 'ssh -t -t bitan@172.31.42.58'
+        sh '''ssh -t -t bitan@172.31.42.58
+pwd'''
       }
     }
 
