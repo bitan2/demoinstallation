@@ -4,7 +4,7 @@ pipeline {
     stage('Speak') {
       when {
         expression {
-          params.REQUESTED_ACTION == 'greeting'
+          params.REQUESTED_ACTION == 'gr'
         }
 
       }
@@ -27,6 +27,6 @@ pipeline {
 
   }
   parameters {
-    choice(choices: ['greeting' , 'silence'], description: '', name: 'REQUESTED_ACTION')
+    choice(choices: ['gr' , 'silence'], description: '', name: 'REQUESTED_ACTION')
   }
 }
