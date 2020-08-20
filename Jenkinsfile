@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('other_installation') {
       steps {
-        sh ''' ssh -t -t ${host}  \'
+        sh ''' ssh -t -t ${env.host}  \'
 mkdir download
 
 cd download
@@ -20,5 +20,8 @@ sudo apt install openjdk-11-jre-headless -y
       }
     }
 
+  }
+  environment {
+    host = 'bitan@172.31.29.115'
   }
 }
