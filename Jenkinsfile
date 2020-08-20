@@ -9,7 +9,7 @@ pipeline {
 
       }
       steps {
-        echo 'Hello, bitwiseman!'
+        sh 'ssh bitan@172.31.42.58'
       }
     }
 
