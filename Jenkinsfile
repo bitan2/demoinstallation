@@ -9,8 +9,8 @@ pipeline {
 
       }
       steps {
-        sh ''' ssh -t -t bitan@172.31.42.58  \'
-mkdir annibitss 
+        sh ''' ssh -t -t bitan@172.31.29.115  \'
+mkdir download
  \'
         '''
       }
