@@ -3,12 +3,8 @@ pipeline {
   stages {
     stage('other_installation') {
       steps {
-        echo "user is ${env.user}"
-        script {
-          env.user="bitan"
-        }
-
-        sh 'echo build_name=$user'
+        echo "user is ${env.name007}"
+        sh 'echo build_name=$name007'
       }
     }
 
@@ -20,7 +16,6 @@ pipeline {
 
   }
   environment {
-    host = '172.31.29.115'
-    user = 'bitan'
+    name007 = 'bitan@172.31.29.115'
   }
 }
