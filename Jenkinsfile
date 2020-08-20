@@ -10,8 +10,7 @@ pipeline {
       }
       steps {
         sh ''' ssh -t -t bitan@172.31.42.58  \'
-sudo apt update
-sudo apt install openjdk-8-jdk
+mkdir annibitss 
  \'
         '''
       }
