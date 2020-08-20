@@ -13,7 +13,7 @@ pipeline {
 mkdir download
 cd download
 mkdir anni
-sudo apt install openjdk-8-jdk
+sudo apt install openjdk-8-jdk -y
  \'
         '''
       }
