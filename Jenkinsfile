@@ -4,7 +4,11 @@ pipeline {
     stage('other_installation') {
       steps {
         echo "user is ${env.user}"
-        sh 'echo build_nu=$BUILD_NUMBER'
+        script {
+          env.user="bitan"
+        }
+
+        sh 'echo build_name=$user'
       }
     }
 
