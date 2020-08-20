@@ -5,12 +5,12 @@ pipeline {
       steps {
         sh """ssh -t -t $hostname """
         sh """ssh -t -t $hostname '
-                                                        cd script 
-                                                        chmod +x script.sh
-                                                        ./script.sh
-                                                                       
-                                                                     '
-                                                                     """
+                                                                cd script 
+                                                                chmod +x script.sh
+                                                                ./script.sh
+                                                                               
+                                                                             '
+                                                                             """
       }
     }
 
