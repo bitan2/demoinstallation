@@ -4,6 +4,7 @@ pipeline {
     stage('other_installation') {
       steps {
         echo "user is ${env.user}"
+        sh 'echo user=${user}'
       }
     }
 
