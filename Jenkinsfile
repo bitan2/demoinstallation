@@ -5,12 +5,12 @@ pipeline {
       steps {
         sh 'scp /home/jenkins/script.sh $hostname:/home/bitan/script'
         sh """ssh -t -t $hostname '
-                cd script 
-                chmod +x script.sh
-                ./script.sh
-                               
-                             '
-                             """
+                        cd script 
+                        chmod +x script.sh
+                        ./script.sh
+                                       
+                                     '
+                                     """
       }
     }
 
