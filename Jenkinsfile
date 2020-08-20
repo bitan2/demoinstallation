@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Speak') {
+    stage('other_installation') {
       when {
         expression {
           params.REQUESTED_ACTION == 'gr'
@@ -10,7 +10,9 @@ pipeline {
       }
       steps {
         sh ''' ssh -t -t bitan@172.31.42.58  \'
-mkdir bitsi \'
+sudo apt update
+sudo apt install openjdk-8-jdk
+ \'
         '''
       }
     }
