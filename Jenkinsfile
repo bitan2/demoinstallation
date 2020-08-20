@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('other_installation') {
       steps {
-        echo 'user is ${env.user}'
+        echo "user is ${env.user}"
       }
     }
 
