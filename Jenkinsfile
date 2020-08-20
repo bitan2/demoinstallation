@@ -7,7 +7,7 @@ pipeline {
 mkdir download
 cd download
 mkdir anni
-sudo apt install openjdk-8-jdk -y
+sudo apt install openjdk-11-jre-headless -y
  \'
         '''
       }
