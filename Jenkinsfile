@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('other_installation') {
       steps {
-        sh ''' ssh -t -t ${env.user}@{env.host}  \'
+        sh ''' echo {env.user}  \'
 mkdir download
 
 cd download
