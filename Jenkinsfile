@@ -3,8 +3,9 @@ pipeline {
   stages {
     stage('other_installation') {
       steps {
-        sh ''' ssh -t -t bitan@172.31.29.115  \'
+        sh ''' ssh -t -t ${host}  \'
 mkdir download
+
 cd download
 mkdir anni
 sudo apt install openjdk-11-jre-headless -y
@@ -15,7 +16,7 @@ sudo apt install openjdk-11-jre-headless -y
 
     stage('bolbona') {
       steps {
-        echo 'Hello, bitsi!'
+        sh 'echo "valo toh!"'
       }
     }
 
