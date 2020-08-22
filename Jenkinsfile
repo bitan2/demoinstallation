@@ -14,6 +14,12 @@ pipeline {
     }
 
     stage('2nd_one') {
+      when {
+        expression {
+          params.req == 'first'
+        }
+
+      }
       steps {
         sh 'echo "valo toh!"'
       }
