@@ -13,7 +13,13 @@ pipeline {
       }
     }
 
-    stage('bolbona') {
+    stage('2nd_one') {
+      steps {
+        sh 'echo "valo toh!"'
+      }
+    }
+
+    stage('3rd_one') {
       when {
         expression {
           params.req == 'second'
@@ -21,7 +27,7 @@ pipeline {
 
       }
       steps {
-        sh 'echo "valo toh!"'
+        echo 'new one'
       }
     }
 
