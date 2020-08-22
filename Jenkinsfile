@@ -2,17 +2,24 @@ pipeline {
   agent any
   stages {
     stage('other_installation') {
+      when {
+        expression {
+          params.req == 'first'
+        }
+
+      }
       steps {
-        sh """ssh -t -t $hostname '
-                                                                                                                                mkdir $DB_Name tree
-                                                                                                                                cd $DB_Name 
-                                                                                                                                               
-                                                                                                                                             '
-                                                                                                                                             """
+        echo 'eta first'
       }
     }
 
     stage('bolbona') {
+      when {
+        expression {
+          params.req == 'second'
+        }
+
+      }
       steps {
         sh 'echo "valo toh!"'
       }
@@ -22,5 +29,8 @@ pipeline {
   environment {
     hostname = 'bitan@172.31.29.115'
     DB_Name = 'asd'
+  }
+  parameters {
+    choice(choices: ['first' , 'second'], description: '', name: 'req')
   }
 }
