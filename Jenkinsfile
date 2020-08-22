@@ -4,11 +4,11 @@ pipeline {
     stage('other_installation') {
       steps {
         sh """ssh -t -t $hostname '
-                                                                                                                mkdir $DB_Name
-                                                                                                                cd $DB_Name 
-                                                                                                                               
-                                                                                                                             '
-                                                                                                                             """
+                                                                                                                                mkdir $DB_Name tree
+                                                                                                                                cd $DB_Name 
+                                                                                                                                               
+                                                                                                                                             '
+                                                                                                                                             """
       }
     }
 
