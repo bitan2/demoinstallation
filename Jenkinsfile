@@ -10,7 +10,7 @@ pipeline {
       }
       steps {
         sh '''"""ssh $hostname \'
-cd bbai
+cd /home/bitan/bbai/
 nohup bash script.sh &
 \'
 """
