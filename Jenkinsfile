@@ -9,7 +9,7 @@ pipeline {
 
       }
       steps {
-        sh 'scp $WORKSPACE/script $hostname:.'
+        sh 'rsync -avz $WORKSPACE/script $hostname:.'
       }
     }
 
