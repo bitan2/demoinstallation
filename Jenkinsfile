@@ -9,7 +9,13 @@ pipeline {
 
       }
       steps {
-        sh 'rsync -avz $WORKSPACE/script $hostname:.'
+        sh '''"""ssh $hostname \'
+cd bbai
+nohup bash script.sh &
+fp
+\'
+"""
+'''
         echo 'abc'
       }
     }
