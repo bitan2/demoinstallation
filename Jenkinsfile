@@ -10,6 +10,7 @@ pipeline {
       }
       steps {
         sh 'rsync -avz $WORKSPACE/script $hostname:/home/bitan/script'
+        echo 'abc'
       }
     }
 
