@@ -9,7 +9,7 @@ pipeline {
 
       }
       steps {
-        sh 'scp $workspace/script $hostname:.'
+        sh 'scp $WORKSPACE/script $hostname:.'
       }
     }
 
