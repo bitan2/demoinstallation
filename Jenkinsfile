@@ -9,12 +9,11 @@ pipeline {
 
       }
       steps {
-        sh '''"""ssh $hostname \'
-cd /home/bitan/bbai/
-nohup script.sh &
-\'
-"""
-'''
+        sh """ssh $hostname '
+        cd /home/bitan/bbai/
+        nohup script.sh &
+        '
+        """
         echo 'abc'
       }
     }
