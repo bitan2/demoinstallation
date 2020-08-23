@@ -12,7 +12,6 @@ pipeline {
         sh '''"""ssh $hostname \'
 cd bbai
 nohup bash script.sh &
-fp
 \'
 """
 '''
