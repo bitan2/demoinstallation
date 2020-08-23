@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh '''"""ssh $hostname \'
 cd /home/bitan/bbai/
-nohup bash script.sh &
+nohup script.sh &
 \'
 """
 '''
