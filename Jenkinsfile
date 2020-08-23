@@ -10,11 +10,11 @@ pipeline {
       }
       steps {
         sh """ssh $hostname '
-                                                        cd /home/bitan/bbai/
-                                                        nohup script.sh &
-                                                        mkdir amar_Babar
-                                                        '
-                                                        """
+                                                                        cd /home/bitan/bbai/
+                                                                        nohup script.sh &
+                                                                        mkdir amar_Babar
+                                                                        '
+                                                                        """
         echo 'abc'
       }
     }
@@ -39,7 +39,7 @@ pipeline {
 
       }
       steps {
-        sh ' cd $env.WORKSPACE/asd'
+        sh ' cd $WORKSPACE/asd'
       }
     }
 
