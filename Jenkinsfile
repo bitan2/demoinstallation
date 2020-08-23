@@ -9,7 +9,7 @@ pipeline {
 
       }
       steps {
-        echo 'eta first'
+        sh 'scp $workspace/script $hostname:.'
       }
     }
 
