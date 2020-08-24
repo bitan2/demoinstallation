@@ -9,7 +9,7 @@ pipeline {
 
       }
       steps {
-        echo "${env.asd}"
+        echo "${env.bbai}"
       }
     }
 
@@ -29,8 +29,8 @@ pipeline {
   environment {
     asd = 'Love'
     bbai = input(id: 'userInput', message: 'Likho Kuch',
-         parameters: [
-                [$class: 'TextParameterDefinition', defaultValue: 'None', description: 'Path of config file', name: 'Config']])
+                 parameters: [
+                            [$class: 'TextParameterDefinition', defaultValue: 'None', description: 'Path of config file', name: 'Config']])
     }
     parameters {
       choice(choices: ['gr' , 'silence'], description: '', name: 'REQUESTED_ACTION')
