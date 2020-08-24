@@ -28,11 +28,10 @@ pipeline {
   }
   environment {
     asd = 'Love'
-    bbai = input(id: 'userInput', message: 'Likho Kuch',
-                         parameters: {String:[
-                                        [$class: 'TextParameterDefinition', defaultValue: 'None', description: 'Path of config file', name: 'Config']]})
-    }
-    parameters {
-      choice(choices: ['gr' , 'silence'], description: '', name: 'REQUESTED_ACTION')
-    }
+    bbai = 'param.DB'
   }
+  parameters {
+    choice(choices: ['gr' , 'silence'], description: '', name: 'REQUESTED_ACTION')
+    string(name: 'DB', defaultValue: 'None', description: '')
+  }
+}
