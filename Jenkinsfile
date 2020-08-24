@@ -1,19 +1,35 @@
 pipeline {
   agent any
   stages {
-    stage('Wait for user to input text?') {
-      steps {
-        script {
-          def userInput = input(id: 'userInput', message: 'Merge to?',
-          parameters: [[$class: 'ChoiceParameterDefinition', defaultValue: 'strDef',
-          description:'describing choices', name:'nameChoice', choices: "QA\nUAT\nProduction\nDevelop\nMaster"]
-        ])
+    stage('other_installation') {
+      when {
+        expression {
+          params.REQUESTED_ACTION == 'gr'
+        }
 
-        println(userInput)
       }
-
+      steps {
+        echo "${env.asd}"
+      }
     }
-  }
 
-}
+    stage('bolbona') {
+      when {
+        expression {
+          params.REQUESTED_ACTION == 'silence'
+        }
+
+      }
+      steps {
+        echo 'Hello, bitsi!'
+      }
+    }
+
+  }
+  environment {
+    asd = 'Love'
+  }
+  parameters {
+    choice(choices: ['gr' , 'silence'], description: '', name: 'REQUESTED_ACTION')
+  }
 }
