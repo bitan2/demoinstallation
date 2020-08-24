@@ -28,7 +28,7 @@ pipeline {
   }
   environment {
     asd = 'Love'
-    bbai = 'param.DB'
+    bbai = '${param.DB}'
   }
   parameters {
     choice(choices: ['gr' , 'silence'], description: '', name: 'REQUESTED_ACTION')
