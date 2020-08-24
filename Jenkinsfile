@@ -9,7 +9,7 @@ pipeline {
 
       }
       steps {
-        echo "${env.bbai}"
+        sh 'echo $bbai amar bbai'
       }
     }
 
