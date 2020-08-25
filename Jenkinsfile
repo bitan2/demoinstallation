@@ -11,10 +11,11 @@ pipeline {
       }
       steps {
         sh """ssh $bbai '
-                                                      mkdir amar_bbai
-                                                      exit
-                                                '
-                                                 """
+                                                                      cd /script
+                                                                      sed -i "s/pass=.*/pass=$pass/g" sc.sh
+                                                                      exit
+                                                                '
+                                                                 """
       }
     }
 
@@ -32,11 +33,12 @@ pipeline {
 
   }
   environment {
-    asd = 'Love'
+    pass = "${params.pass_value}"
     bbai = "${params.Host_name}"
   }
   parameters {
     choice(choices: ['gr' , 'silence'], description: '', name: 'REQUESTED_ACTION')
     string(name: 'Host_name', defaultValue: 'None', description: '')
+    string(name: 'pass_value', defaultValue: 'None', description: '')
   }
 }
