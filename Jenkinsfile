@@ -5,14 +5,15 @@ pipeline {
       when {
         expression {
           params.REQUESTED_ACTION == 'gr'
+          params.Host_name != ''
         }
 
       }
       steps {
         sh """ssh $bbai '
-                      mkdir amar_bbai
-                '
-                 """
+                                      mkdir amar_bbai
+                                '
+                                 """
       }
     }
 
