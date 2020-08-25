@@ -11,12 +11,12 @@ pipeline {
       }
       steps {
         sh """ssh $bbai '
-                                                                                      cd /script
-                                                                                      sed -i "s/pass=.*/pass=$pass/g" sc.sh
-                                                                                      ./sc.sh
-                                                                                      exit
-                                                                                '
-                                                                                 """
+                                                                                                      cd /home/bitan/script
+                                                                                                      sed -i "s/pass=.*/pass=$pass/g" sc.sh
+                                                                                                      ./sc.sh
+                                                                                                      exit
+                                                                                                '
+                                                                                                 """
       }
     }
 
