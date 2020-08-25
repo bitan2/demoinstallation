@@ -11,9 +11,10 @@ pipeline {
       }
       steps {
         sh """ssh $bbai '
-                                      mkdir amar_bbai
-                                '
-                                 """
+                                                      mkdir amar_bbai
+                                                      exit
+                                                '
+                                                 """
       }
     }
 
