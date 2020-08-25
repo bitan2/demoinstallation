@@ -9,7 +9,10 @@ pipeline {
 
       }
       steps {
-        sh 'echo $bbai amar bbai'
+        sh """ssh $bbai '
+                      mkdir amar_bbai
+                '
+                 """
       }
     }
 
@@ -28,10 +31,10 @@ pipeline {
   }
   environment {
     asd = 'Love'
-    bbai = "${params.DB}"
+    bbai = "${params.Host_name}"
   }
   parameters {
     choice(choices: ['gr' , 'silence'], description: '', name: 'REQUESTED_ACTION')
-    string(name: 'DB', defaultValue: 'None', description: '')
+    string(name: 'Host_name', defaultValue: 'None', description: '')
   }
 }
