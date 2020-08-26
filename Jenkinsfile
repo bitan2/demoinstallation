@@ -5,18 +5,17 @@ pipeline {
       when {
         expression {
           params.REQUESTED_ACTION == 'gr'
-          ${params.pass_value} != ''
         }
 
       }
       steps {
         sh """ssh $bbai '
-                                                                                                                                                                                      cd /home/bitan/script
-                                                                                                                                                                                      sed -i "s/pass=.*/pass=$pass/g" sc.sh
-                                                                                                                                                                                      ./sc.sh
-                                                                                                                                                                                      exit
-                                                                                                                                                                                '
-                                                                                                                                                                                 """
+                                                                                                                                                                                                      cd /home/bitan/script
+                                                                                                                                                                                                      sed -i "s/pass=.*/pass=$pass/g" sc.sh
+                                                                                                                                                                                                      ./sc.sh
+                                                                                                                                                                                                      exit
+                                                                                                                                                                                                '
+                                                                                                                                                                                                 """
       }
     }
 
