@@ -12,12 +12,11 @@ pipeline {
       }
       steps {
         sh """ssh $bbai '
-                                                                                                                                                                                                                      cd /home/bitan/script
-                                                                                                                                                                                                                      sed -i "s/pass=.*/pass=$pass/g" sc.sh
-                                                                                                                                                                                                                      ./sc.sh
-                                                                                                                                                                                                                      exit
-                                                                                                                                                                                                                '
-                                                                                                                                                                                                                 """
+                                 if [[ -d makula ]]; then echo "directory present"; else mkdir makula;fi                                                                                                                                                                                                     
+                                                                                                                                                                                                                                      ./sc.sh
+                                                                                                                                                                                                                                      exit
+                                                                                                                                                                                                                                '
+                                                                                                                                                                                                                                 """
       }
     }
 
