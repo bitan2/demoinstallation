@@ -1,19 +1,31 @@
 pipeline {
   agent any
   stages {
+    stage('Validate parameters') {
+      when {
+        expression {
+          ![''].contains(params.pass_value)
+        }
+
+      }
+      steps {
+        error "Invalid target environment: ${params.pass_value}"
+      }
+    }
+
     stage('other_installation') {
       when {
         expression {
-          params.REQUESTED_ACTION == 'gr' && params.pass_value != '' && params.Host_name != ''
+          params.REQUESTED_ACTION == 'gr'
         }
 
       }
       steps {
         sh """ssh $bbai '
-                                                         if [[ -d makula ]]; then echo "directory present"; else mkdir makula;fi                                                                                                                                                                                                     
-                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                        '
-                                                                                                                                                                                                                                                         """
+                                                                         if [[ -d makula ]]; then echo "directory present"; else mkdir makula;fi                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                        '
+                                                                                                                                                                                                                                                                         """
       }
     }
 
