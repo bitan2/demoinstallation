@@ -12,11 +12,10 @@ pipeline {
       }
       steps {
         sh """ssh $bbai '
-                                 if [[ -d makula ]]; then echo "directory present"; else mkdir makula;fi                                                                                                                                                                                                     
-                                                                                                                                                                                                                                      ./sc.sh
-                                                                                                                                                                                                                                      exit
-                                                                                                                                                                                                                                '
-                                                                                                                                                                                                                                 """
+                                         if [[ -d makula ]]; then echo "directory present"; else mkdir makula;fi                                                                                                                                                                                                     
+                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                        '
+                                                                                                                                                                                                                                         """
       }
     }
 
