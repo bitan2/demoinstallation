@@ -4,18 +4,16 @@ pipeline {
     stage('other_installation') {
       when {
         expression {
-          params.REQUESTED_ACTION == 'gr'
-          params.pass_value != ''
-          params.Host_name != ''
+          params.REQUESTED_ACTION == 'gr' && params.pass_value != '' && params.Host_name != ''
         }
 
       }
       steps {
         sh """ssh $bbai '
-                                         if [[ -d makula ]]; then echo "directory present"; else mkdir makula;fi                                                                                                                                                                                                     
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                        '
-                                                                                                                                                                                                                                         """
+                                                         if [[ -d makula ]]; then echo "directory present"; else mkdir makula;fi                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                        '
+                                                                                                                                                                                                                                                         """
       }
     }
 
