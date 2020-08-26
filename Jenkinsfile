@@ -4,6 +4,7 @@ pipeline {
     stage('Validate parameters') {
       when {
         expression {
+          params.REQUESTED_ACTION == 'gr'
           ![''].contains(params.pass_value)
         }
 
@@ -22,10 +23,10 @@ pipeline {
       }
       steps {
         sh """ssh $bbai '
-                                                                         if [[ -d makula ]]; then echo "directory present"; else mkdir makula;fi                                                                                                                                                                                                     
-                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                        '
-                                                                                                                                                                                                                                                                         """
+                                                                                         if [[ -d makula ]]; then echo "directory present"; else mkdir makula;fi                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                        '
+                                                                                                                                                                                                                                                                                         """
       }
     }
 
