@@ -3,8 +3,9 @@ pipeline {
   stages {
     stage('Validate parameters') {
       steps {
-        sh '''IFS=, read -ra values <<< ${params.Host_name}
-for v in "${values[@]}"
+        sh '''variable={params.Host_name}
+IFS=","
+for v in $variable
 do
    echo "var is $v"
 done'''
