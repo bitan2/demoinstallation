@@ -10,23 +10,11 @@ pipeline {
 
       }
       steps {
-        error "Invalid target environment: ${params.pass_value}"
-      }
-    }
-
-    stage('other_installation') {
-      when {
-        expression {
-          params.REQUESTED_ACTION == 'gr'
-        }
-
-      }
-      steps {
-        sh """ssh $bbai '
-                                                                                                         if [[ -d makula ]]; then echo "directory present"; else mkdir makula;fi                                                                                                                                                                                                     
-                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                        '
-                                                                                                                                                                                                                                                                                                         """
+        sh '''IFS=, read -ra values <<< ${params.Host_name}
+for v in "${values[@]}"
+do
+   echo "var is $v"
+done'''
       }
     }
 
