@@ -3,14 +3,7 @@ pipeline {
   stages {
     stage('Validate parameters') {
       steps {
-        script {
-          def art = ${params.Host_name}.split(';')
-          for (a in art) {
-            echo a
-
-          }
-        }
-
+        echo 'valo'
       }
     }
 
