@@ -14,21 +14,8 @@ pipeline {
       }
     }
 
-    stage('bolbona') {
-      when {
-        expression {
-          params.REQUESTED_ACTION == 'silence'
-        }
-
-      }
-      steps {
-        echo '${env.bbai}'
-      }
-    }
-
   }
   environment {
-    pass = "${params.pass_value}"
     bbai = "${params.Host_name}"
   }
   parameters {
