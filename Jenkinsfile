@@ -3,12 +3,14 @@ pipeline {
   stages {
     stage('Validate parameters') {
       steps {
-        sh '''variable={params.Host_name}
-IFS=","
-for v in $variable
-do
-   echo "var is $v"
-done'''
+        script {
+          def art = ${params.Host_name}.split(';')
+          for (a in art) {
+            echo a
+
+          }
+        }
+
       }
     }
 
