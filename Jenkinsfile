@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Validate parameters') {
       steps {
-        echo 'valo'
+        lala()
       }
     }
 
